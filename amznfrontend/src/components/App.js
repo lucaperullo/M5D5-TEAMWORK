@@ -21,3 +21,10 @@ function App() {
 }
 
 export default App;
+///////////////////////////
+//Navbar = Massi///////////
+//Footer =  Davide/////////
+//Style Cards = Lucone, Anri////
+//BackOfficeStyle = Mirela/
+//RowsAndStuff = Federico//
+///////////////////////////
