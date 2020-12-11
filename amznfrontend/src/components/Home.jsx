@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Navbar from "./Navbar";
+import { Card, Col, Container, Row, Button } from "react-bootstrap";
 
 class Home extends Component {
   state = {
@@ -24,12 +24,26 @@ class Home extends Component {
   render() {
     console.log(this.props);
     return (
-      <div>
-        <Navbar />
-        {this.state.products.map((product) => (
-          <span>{product.name}</span>
-        ))}
-      </div>
+      <>
+        <Container>
+          <Row>
+            {this.state.products.map((product) => (
+              <Card style={{ width: "18rem" }}>
+                <Card.Img
+                  variant="top"
+                  src={product.imageUrl}
+                  style={{ height: "120px", width: "150px" }}
+                />
+                <Card.Body>
+                  <Card.Title>{product.name}</Card.Title>
+                  <Card.Text>{product.price}€</Card.Text>
+                  <Button variant="primary">Go somewhere</Button>
+                </Card.Body>
+              </Card>
+            ))}
+          </Row>
+        </Container>
+      </>
     );
   }
 }
