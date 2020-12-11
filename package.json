@@ -4,8 +4,7 @@
   "description": "uhAHHHuh",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon -r dotenv/config ./src/server.js"
+    "start2": "nodemon -r dotenv/config ./src/server.js"
   },
   "keywords": [],
   "author": "",
