@@ -7,7 +7,7 @@ class Home extends Component {
 
   fetchProducts = async () => {
     try {
-      let response = await fetch(`http://127.0.0.1:7777/products`);
+      let response = await fetch(`http://127.0.0.1:3004/products`);
       let data = await response.json();
       this.setState({ products: data });
       console.log(data);

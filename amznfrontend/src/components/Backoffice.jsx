@@ -19,7 +19,7 @@ class Backoffice extends Component {
   submitData = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://127.0.0.1:7777/products`, {
+      const response = await fetch(`http://127.0.0.1:3004/products`, {
         method: "POST",
         body: JSON.stringify(this.state.product),
         headers: {
