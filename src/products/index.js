@@ -103,7 +103,7 @@ router.put("/:id", async (req, res, next) => {
       const editedproduct = {
         ...req.body,
         ID: singleproduct[0].ID,
-        StudentID: singleproduct[0].StudentID,
+        ProductID: singleproduct[0].ProductID,
         CreationDate: singleproduct[0].CreationDate,
         ModifiedDate: new Date(),
       };
