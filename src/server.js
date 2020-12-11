@@ -5,13 +5,12 @@ const {
   forbiddenHandler,
   catchAllHandler,
 } = require("./errorHandling");
-const productRoutes = require("./products");
 
 const server = express();
 const port = process.env.PORT || 3007;
 
 server.use(express.json());
-server.use("/products", productRoutes);
+
 server.use("/files", require("./files"));
 //importing the errorhandlers
 server.use(notFoundHandler);

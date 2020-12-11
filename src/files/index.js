@@ -11,7 +11,7 @@ const upload = multer({});
 const productsImagePath = join(__dirname, "../../public/img/products");
 
 router.post(
-  "/:id/uploadPhoto",
+  "/uploadPhoto",
   upload.single("productImg"),
   async (req, res, next) => {
     console.log(req.params.id);
