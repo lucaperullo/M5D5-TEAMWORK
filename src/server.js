@@ -1,27 +1,40 @@
-const express = require("express");
+const express = require("express")
+const { join } = require("path")
+const cors = require("cors")
+const productsRouter = require("./products/productsDB")
+const reviesRouter = require('./reviews/reviews')
 const {
-  notFoundHandler,
-  unauthorizedHandler,
-  forbiddenHandler,
-  catchAllHandler,
-} = require("./errorHandling");
+    notFoundHandler,
+    unauthorizedHandler,
+    forbiddenHandler,
+    badRequestHandler,
+    catchAllHandler
+} = require("../errorHandler")
 
-const server = express();
-const port = process.env.PORT || 3007;
+const server = express()
 
-server.use(express.json());
+const port = process.env.PORT || 3005
 
-server.use("/files", require("./files"));
-//importing the errorhandlers
-server.use(notFoundHandler);
-server.use(unauthorizedHandler);
-server.use(forbiddenHandler);
-server.use(catchAllHandler);
-//giving the port and a cute message to the console
+const loggerMiddleware = (req, res, next) => {
+    console.log(`Logged ${req.url} ${req.method} -- ${new Date()} `)
+    next()
+}
+
+server.use(cors())
+server.use(express.json())
+server.use(loggerMiddleware)
+
+server.use("/products", productsRouter)
+server.use("/reviews", reviesRouter)
+
+
+server.use(notFoundHandler)
+server.use(unauthorizedHandler)
+server.use(badRequestHandler)
+server.use(forbiddenHandler)
+server.use(catchAllHandler)
+
+
 server.listen(port, () => {
-  console.log(
-    "Amazon server is running on port :",
-    process.env.PORT,
-    ", abadabbadul huhu"
-  );
-});
+    console.log(`Server is running on port ${port}`)
+})

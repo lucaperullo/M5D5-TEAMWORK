@@ -40,8 +40,9 @@ router.get("/:id", async (req, res, next) => {
         : err = new Error()
         err.httpStatusCode = 404
         next(err)
-    } catch (error) {
-        next(error)
+    } catch (err) {
+        err.httpStatusCode = 404
+        next(err)
     }
 })
 
@@ -93,9 +94,9 @@ async (req, res, next) => {
         await writeDB(productsFilePath, productsDB)
         res.send(201).send({ newProduct })
     }
-    } catch (error) {
-
-        next(error)
+    } catch (err) {
+        err.httpStatusCode = 400
+        next(err)
     }
 
 }
