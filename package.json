@@ -8,8 +8,8 @@
     "@testing-library/user-event": "^12.5.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
-    "express-validator": "^6.8.0",
     "express": "^4.17.1",
+    "express-validator": "^6.8.0",
     "fs-extra": "^9.0.1",
     "nodemon": "^2.0.6",
     "react": "^17.0.1",
@@ -23,7 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "nodemon -r dotenv/config ./src/server.js"
+    "dev": "nodemon -r dotenv/config ./server.js"
   },
   "eslintConfig": {
     "extends": [

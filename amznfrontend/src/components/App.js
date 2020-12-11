@@ -11,7 +11,7 @@ function App() {
     <Router>
       <Route path="/" exact render={(props) => <Home {...props} />} />
       <Route path="/cart" render={(props) => <Cart {...props} />} />
-      <Route path="/backoffice" render={(props) => <Backoffice {...props} />} />
+      <Route path="/products" render={(props) => <Backoffice {...props} />} />
       <Route
         path="/product/:productId"
         render={(props) => <Product {...props} />}
@@ -21,10 +21,3 @@ function App() {
 }
 
 export default App;
-///////////////////////////
-//Navbar = Massi///////////
-//Footer =  Davide/////////
-//Style Cards = Lucone, Anri////
-//BackOfficeStyle = Mirela/
-//RowsAndStuff = Federico//
-///////////////////////////

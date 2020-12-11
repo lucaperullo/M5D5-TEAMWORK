@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Navbar from "./Navbar";
 
 class Home extends Component {
   state = {
@@ -24,6 +25,7 @@ class Home extends Component {
     console.log(this.props);
     return (
       <div>
+        <Navbar />
         {this.state.products.map((product) => (
           <span>{product.name}</span>
         ))}
