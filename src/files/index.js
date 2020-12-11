@@ -12,7 +12,7 @@ const productsImagePath = join(__dirname, "../../public/img/products");
 
 router.post(
   "/:id/uploadPhoto",
-  upload.single("projectImg"),
+  upload.single("productImg"),
   async (req, res, next) => {
     console.log(req.params.id);
     console.log(req.file.originalname);
